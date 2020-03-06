@@ -1,0 +1,122 @@
+/* html, body{
+    margin: 0;padding: 0;height: 100vh;width: 100%;overflow: hidden;box-sizing: border-box;
+  }
+  #container{
+    height: 100vh;width: auto;margin: auto;white-space: nowrap;overflow: hidden;position: relative;
+  }
+  #html{height: 100%;width: 50%;display: inline-block;}
+  #css{height: 100%;width: 50%;display: inline-block;}
+  #js{height: 100%;width: 50%;display: inline-block;}
+
+
+  
+
+  .ace_editor .ace_marker-layer .ace_bracket { display: none } */
+
+  html, body{
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      box-sizing: border-box;
+  }
+  #container{
+    width: 100%;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 6px 2fr;
+    grid-template-areas: "editorArea middleGutter live-frame";
+
+    /*
+    grid-template-areas: 
+    "html html live live" 
+    "css css live live" 
+    "js js live live"; */
+  }
+
+  #editorArea{
+    grid-template-areas: editorArea;
+    /* background-color: aqua; */
+    display: grid;
+
+    grid-template-rows: 30px 1fr 6px 30px 1fr 6px 30px 1fr;
+    grid-template-areas: 
+    "topbox1"
+    "html"
+    "html-to-css"
+    "topbox2"
+    "css"
+    "css-to-js"
+    "topbox3"
+    "js";
+  }
+ #live-frame{
+      /* grid-area: live; */
+      grid-template-areas: live-frame;
+      /* background-color: aquamarine; */
+  }
+
+
+  #html{
+    /* background-color: aqua; */
+    grid-area: html;
+    overflow: auto;
+
+  }
+  #css{
+      /* background-color: bisque; */
+      grid-area: css;
+      overflow: auto;
+
+
+  }
+  #js{
+    /* background-color: chocolate; */
+    grid-area: js;
+    overflow: auto;
+  }
+ 
+  #result{height: 100%;width: 100%;display: inline-block;}
+
+  .gutter{
+    
+    cursor: col-resize;
+    background-color: red;
+
+  }
+  .gutter2{
+    cursor: row-resize;
+    background-color: red;
+  }
+  .middleGutter{
+    grid-area: middleGutter;
+  }
+  .html-to-css{
+    grid-area: html-to-css;
+  }
+  .css-to-js{
+    grid-area: css-to-js;
+  }
+  .topBox1{
+    grid-area: topbox1;
+    background-color: white;
+  }
+  .topBox2{
+    grid-area: topbox2;
+    background-color: white;
+  }
+  .topBox3{
+    grid-area: topbox3;
+    background-color: white;
+  }
+  
+  .topBox h3{
+    margin: 0;
+    font-size: 1.5em;
+    padding-left: 40px;
+    color: white;
+    display: block;
+    background-color: black;
+  }

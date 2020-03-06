@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML, CSS, JS Live Editor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.7/ace.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body onresize="ResetSizes()">
+    <!-- işin bittiğinde buraya "onload="ready()" fonksiyonu ekle -->
+
+    <div id="container" onmouseup="EndDrag()" onmousemove="OnMiddleDrag(event)">
+        <!-- <div id="editorArea" onmouseup="EndDrag()" onmousemove=""> -->
+        <div id="editorArea">
+            <div class="topBox topBox1">
+                <h3>HTML</h3>
+            </div>
+            <div id="html"></div>
+            <div class="gutter2 html-to-css" onmousedown="StartHtmlToCssDrag()"></div>
+            <div class="topBox topBox2">
+                <h3>CSS</h3>
+            </div>
+            <div id="css"></div>
+            <div class="gutter2 css-to-js" onmousedown="StartCssToJsDrag()"></div>
+            <div class="topBox topBox3">
+                <h3>JAVASCRIPT</h3>
+            </div>
+            <div id="js"></div>
+        </div>
+        <div id="middleGutter" class="gutter" onmousedown="StartMiddleDrag()"></div>
+        <div id="live-frame">
+            <iframe id="result" frameborder="0"></iframe>
+        </div>
+    </div>
+
+
+    <script src="https://rawgithub.com/ajaxorg/ace-builds/master/src/ext-emmet.js">  </script>
+    <script src="https://rawgithub.com/nightwing/emmet-core/master/emmet.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
